@@ -13,7 +13,17 @@ document.addEventListener("keypress",function(){
         started = true;
         levelUP();
     }
-   
+});
+
+
+// Start game with button (for mobile)
+let startBtn = document.querySelector("#start-btn");
+startBtn.addEventListener("click", function () {
+    if (started == false) {
+        console.log("Game started via button");
+        started = true;
+        levelUP();
+    }
 });
 
 //Flash buttons and levelUP
@@ -53,7 +63,7 @@ function checkAns(idx){
         setTimeout(levelUP,1000)
     }
   }else{
-      h3.innerHTML = `Game Over! | <i>Your Score - ${level}</i> | Press any key to start.`;
+      h3.innerHTML = `Game Over! | <i>Your Score - ${level}</i> | Press any key OR Start button to start.`;
       document.querySelector("body").style.backgroundColor = "red";
       setTimeout(function(){
         document.querySelector("body").style.backgroundColor = "white";
